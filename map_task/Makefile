@@ -17,4 +17,4 @@ clean:
 	${RM} ${TARGET}
 
 run: all
-	${TARGET}
+	(${TARGET} | python graph.py) | (python dict.py | python graph.py)
