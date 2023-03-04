@@ -12,7 +12,7 @@ int main(){
         int degree = pow(10,i);
         str.append(std::to_string(degree));
         str.append(" ");
-        str.append(std::to_string(float(memory_allocation(i)/10000000)));
+        str.append(std::to_string(float(memory_allocation(i)/1000)));
         str.append(" ");
     }
     str.pop_back();
