@@ -14,6 +14,8 @@ int main(){
         str.append(" ");
         str.append(std::to_string(float(memory_allocation(i)/1000)));
         str.append(" ");
+        str.append(std::to_string(2 * sizeof(int) * degree));
+        str.append(" ");
     }
     str.pop_back();
     std::cout<<str;
