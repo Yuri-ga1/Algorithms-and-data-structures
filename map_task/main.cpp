@@ -4,17 +4,15 @@
 #include <string.h>
 #include <map>
 
-std::map <int, int> dict;
-
 float memory_allocation(int n);
 
 int main(){
     std::string str;
-    for(int i=0; i<=4; i++){
+    for(int i=0; i<=7; i++){
         int degree = pow(10,i);
         str.append(std::to_string(degree));
         str.append(" ");
-        str.append(std::to_string(memory_allocation(i)));
+        str.append(std::to_string(float(memory_allocation(i)/10000000)));
         str.append(" ");
     }
     str.pop_back();
@@ -23,10 +21,12 @@ int main(){
     return 0;
 }
 
-float memory_allocation(int n){
-    int degree = pow(10,n);
+float memory_allocation(int degree){
+    int n = pow(10,degree);
+    std::map <int, int> dict;
+
     auto t1 = std::chrono::high_resolution_clock::now();
-    for(int j=0; j<degree; j++){
+    for(int j=0; j<n; j++){
         dict.insert({j,j});
     }
     auto t2 = std::chrono::high_resolution_clock::now();

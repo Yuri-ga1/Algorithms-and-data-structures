@@ -8,7 +8,7 @@ def memory_allocation(n: int) -> float:
 
 mylist = []
 
-for i in range(0,5):
+for i in range(0,6):
     n=10**i
     elapsed = memory_allocation(n)
     mylist.append(n)
