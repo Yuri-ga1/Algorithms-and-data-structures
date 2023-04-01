@@ -340,16 +340,3 @@ public:
 	}
 
 };
-
-int main() {
-	NDArray <float> myArray;
-
-	NDArray <float> arr(3, 5);
-
-	arr.getOnes();
-	cout << arr << '\n';
-	NDArray <float> arr2 = myArray.median(arr);
-
-	cout << "main: \n" << arr2;
-	return 0;
-}
