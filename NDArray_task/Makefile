@@ -1,20 +1,25 @@
-CC := g++
-CFLAGS := -std=c++20 -Wall -pedantic
-SOURCES := main.cpp
+CC = g++
+CFLAGS = -std=c++11 -Wall -pedantic
+SOURCES = myArray.cpp
 
-ifeq (${OS},Windows_NT)
-	TARGET := main.exe
-	RM := del
+ifeq ($(OS), Windows_NT)
+	RM = del
+	TARGET = m1.exe
 else
-	TARGET := main
-	RM := rm
+	RM = rm
+	TARGET = m1
 endif
 
 all:
-	$(CC) ${CFLAGS} -o ${TARGET} ${SOURCES}
-
+	$(CC) $(CFLAGS) -o $(TARGET) $(SOURCES)
 clean:
-	${RM} ${TARGET}
+	echo $(OS)
+	$(RM) $(TARGET)
 
 run: all
-	${TARGET}
+
+ifeq ($(OS), Windows_NT)
+	.\$(TARGET)
+else
+	./$(TARGET)
+endif
