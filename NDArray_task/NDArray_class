@@ -1,8 +1,12 @@
 #include <iostream>
 #include <limits.h>
 #include <ctime>
+#include <concepts>
 
 using namespace std;
+
+template <typename T>
+concept Number = integral<T> || floating_point<T>;
 
 template <typename T> class NDArray {
 private:
@@ -340,3 +344,9 @@ public:
 	}
 
 };
+
+int main(){
+	int x;
+	cout << "ture";
+	cin >> x;
+}
