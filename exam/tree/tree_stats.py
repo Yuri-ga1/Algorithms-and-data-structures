@@ -40,7 +40,8 @@ def draw_binary_tree(node):
         add_edges(node.right, node.value)
 
     add_edges(node)
-    nx.draw(G, with_labels=True, node_size=500, node_color='lightblue', font_size=12, font_weight='bold')
+    #pos = nx.drawing.nx_pydot.graphviz_layout(G, prog='dot')
+    nx.draw(G, with_labels=True, node_size=500, node_color='lightblue')
     plt.show()
 
 def isfull(node):
